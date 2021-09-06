@@ -15,10 +15,11 @@ spec:
         namespace: flux-repo
       interval: 1m
   values:
-    replicaCount: 1
+    replicaCount: 2
     resources:
       limits:
+        cpu: 250m
         memory: 256Mi
       requests:
-        cpu: 100m
-        memory: 64Mi
+        cpu: 10m
+        memory: 32Mi
