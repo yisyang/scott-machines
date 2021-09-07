@@ -4,6 +4,7 @@ CasC storage space of new and migrated personal projects.
 # Initial project
 
 ## Plan for stock project
+- Bootstrap with https://github.com/fluxcd/flux2-kustomize-helm-example
 - Start locally with K8s w/ robotrade namespace
 - Add container with TSDB
 - Add container with Couchbase

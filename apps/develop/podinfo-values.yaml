@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: podinfo
+spec:
+  test:
+    enable: true
+  values:
+    ingress:
+      hosts:
+        - host: podinfo.dev.local

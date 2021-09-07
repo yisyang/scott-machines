@@ -2,18 +2,21 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: podinfo
-  namespace: stats
+  namespace: podinfo
 spec:
-  interval: 5m
+  releaseName: podinfo
   chart:
     spec:
       chart: podinfo
-      version: '6.0.x'
+      version: "6.0.x"
       sourceRef:
         kind: HelmRepository
         name: podinfo
         namespace: flux-repo
-      interval: 1m
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
   values:
     replicaCount: 2
     resources:
@@ -23,3 +26,8 @@ spec:
       requests:
         cpu: 10m
         memory: 32Mi
+    cache: redis-master.redis:6379
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
