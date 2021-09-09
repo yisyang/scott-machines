@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
-  name: podinfo
+  name: timescale
 spec:
-  url: https://stefanprodan.github.io/podinfo
+  url: https://charts.timescale.com
   interval: 1h0m0s
