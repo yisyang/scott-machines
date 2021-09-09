@@ -5,3 +5,21 @@ resources:
   - ../base/podinfo
 patchesStrategicMerge:
   - podinfo-values.yaml
+
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: redis
+resources:
+  - ../base/redis
+patchesStrategicMerge:
+  - redis-values.yaml
+
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: timescaledb
+resources:
+  - ../base/timescaledb-single
+patchesStrategicMerge:
+  - timescaledb-single-values.yaml

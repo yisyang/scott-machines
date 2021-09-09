@@ -1,0 +1,9 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: timescaledb-single
+spec:
+  values:
+    replicaCount: 2
+    backup:
+      enabled: false
