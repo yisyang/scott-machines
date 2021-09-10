@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: timescaledb-single
-      version: "0.9.x"
+      version: "0.8.x"
       sourceRef:
         kind: HelmRepository
         name: timescale
